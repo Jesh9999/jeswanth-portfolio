@@ -1,0 +1,397 @@
+
+:root {
+  --accent: #4c6ef5;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+body.dark {
+  background: #121212;
+  color: #f5f5f5;
+}
+header {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav__link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+.section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+.btn, .btn-outline {
+  display: inline-block;
+  margin: 1rem 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.btn { background: var(--accent); color: #fff; border: none; }
+.btn-outline { border: 2px solid var(--accent); color: var(--accent); }
+
+.skill-bar {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.skill-bar img {
+  height: 30px;
+}
+.skill-track {
+  width: 100%;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+}
+.skill-fill {
+  height: 10px;
+  background-color: var(--accent);
+  width: 0%;
+  animation: fillAnim 2s forwards;
+}
+@keyframes fillAnim {
+  to { width: var(--width); }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.portfolio__content {
+  width: 260px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.flip-card {
+  background-color: transparent;
+  width: 260px;
+  height: 300px;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.flip-card-front {
+  background-color: #fff;
+}
+.flip-card-back {
+  background-color: var(--accent);
+  color: white;
+  transform: rotateY(180deg);
+}
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f1f3f5;
+}
+#scrollTopBtn:hover {
+  background: #3b5bdb;
+}
+.contact-icons a {
+  font-size: 2rem;
+  margin: 0 10px;
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+.contact-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Enhanced Button Hover */
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure skill bars animate and display correctly */
+.skill-fill {
+  height: 10px;
+  background-color: var(--accent);
+  width: 0%;
+  animation: fillAnim 2s forwards;
+}
+
+@keyframes fillAnim {
+  from { width: 0%; }
+  to { width: var(--width, 80%); }
+}
+
+.skill-bar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.skill-bar span {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.skill-track {
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  width: 100%;
+}
+.skill-fill {
+  background-color: var(--accent);
+  height: 10px;
+  width: 0%;
+  animation: fillAnim 2s forwards;
+}
+
+.section {
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.portfolio__content {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio__content:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Nav link hover underline and glow */
+.nav__link {
+  position: relative;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: var(--accent);
+  transition: width 0.3s;
+}
+.nav__link:hover::after {
+  width: 100%;
+}
+
+/* Buttons - subtle grow and glow */
+.button {
+  transition: all 0.3s ease;
+}
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(76, 110, 245, 0.4);
+}
+
+/* Section fade + upward reveal animation */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: sectionFadeIn 0.8s forwards;
+  animation-delay: 0.2s;
+}
+@keyframes sectionFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project card enhancement */
+.portfolio__content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.portfolio__content:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth body transition (e.g., for theme toggle later) */
+body {
+  transition: all 0.3s ease;
+}
+
+/* Typing animation for headline loop */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  animation:
+    typing 3s steps(30, end),
+    blink 0.7s step-end infinite;
+}
+
+/* Background animation for hero section */
+/* Updated elegant hero background */
+.home__container {
+  position: relative;
+  background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+  padding: 6rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: background 0.6s ease;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Scrollspy active nav */
+.nav__link.active-link {
+  color: var(--accent);
+  font-weight: bold;
+  position: relative;
+}
+.nav__link.active-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  bottom: -6px;
+  left: 0;
+}
+
+/* Project hover float effect */
+.portfolio__content:hover {
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Slide-in on scroll */
+@keyframes slideIn {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.section {
+  animation: slideIn 1s ease forwards;
+}
+
+/* Parallax effect */
+body {
+  background: linear-gradient(to top right, #dfe9f3, #ffffff);
+  background-attachment: fixed;
+}
+
+/* Hero section parallax */
+/* Updated elegant hero background */
+.home__container {
+  position: relative;
+  background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+  padding: 6rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: background 0.6s ease;
+}
+
+/* Animated wave divider */
+.wave {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: url('https://raw.githubusercontent.com/anup-a/svg-wave-animation/main/wave.svg') repeat-x;
+  background-size: 2000px 100px;
+  animation: waveAnim 10s linear infinite;
+}
+@keyframes waveAnim {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 2000px; }
+}
+
+/* Glassmorphism for project cards */
+.portfolio__content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio__content:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient stroke text for project titles */
+.portfolio__title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  background: linear-gradient(to right, #4c6ef5, #5f6df2, #6a89f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulseStroke 5s ease infinite;
+}
+@keyframes pulseStroke {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
