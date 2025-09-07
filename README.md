@@ -1,7 +1,7 @@
-# Jeswanth Portfolio — ZOOX_PINNED (section pinning, cinematic)
+# Jeswanth Portfolio 
 
 Highlights
-- Zoox-style **pinned storytelling** section (image swaps on scroll)
+- storytelling** section (image swaps on scroll)
 - GSAP ScrollTrigger + Lenis smooth scroll
 - Split-headline animation, marquee tech strip, 3D card tilts, magnetic buttons, cursor glow, particle backdrop
 - Project visuals tailored (EV pipeline, HR analytics, GTM CRM)
