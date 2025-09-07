@@ -1,187 +1,137 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeswanth Adari | Data Analyst & Engineer</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script defer src="script.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>© Jeswanth Adari</title>
+<meta content="Zoox-inspired portfolio with section pinning, cinematic scroll, and premium microinteractions." name="description"/>
+<meta content="#0b0b0b" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<!-- GSAP + ScrollTrigger + Lenis (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.36/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script defer="" src="script.js"></script>
 </head>
-
-<body>
-  <header class="header" id="header">
-    
-<nav class="nav container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-  <a href="#" class="nav__logo" style="font-weight: bold; font-size: 1.25rem; text-decoration: underline;">Jeswanth Adari</a>
-  <div class="nav__menu" style="display: flex; gap: 1.5rem;">
-    <a href="#home" class="nav__link">Home</a>
-    <a href="#about" class="nav__link">About</a>
-    <a href="#skills" class="nav__link">Skills</a>
-    <a href="#projects" class="nav__link">Projects</a>
-    <a href="#contact" class="nav__link">Contact</a>
-  </div>
+<body><div class="progressbar"></div>
+<!-- Progress Bar -->
+<div aria-hidden="" class="progress"><div class="progress__bar" id="progress"></div></div>
+<!-- Cursor Glow -->
+<div aria-hidden="" class="cursor" id="cursor"></div>
+<header class="hdr" role="banner">
+<nav aria-label="Main" class="nav container">
+<a aria-label="Home" class="brand" href="#home">JA</a>
+<button aria-controls="navmenu" aria-expanded="false" aria-label="Menu" class="menu">
+<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+<ul class="navmenu" id="navmenu">
+<li><a href="#work">Stories</a></li>
+<li><a href="#stories">Work</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a class="btn btn--ghost" href="resume.pdf" rel="noopener" target="_blank">Resume</a></li>
+</ul>
 </nav>
-
-  </header>
-
-  <main class="main">
-    <!-- Home -->
-    <section class="home section" id="home">
-      <div class="home__container container grid">
-        <div class="home__data">
-          <h1 class="home__title">Hi, I'm Jeswanth</h1>
-          <h3 class="home__subtitle" style="min-height: 1.5em;"><span id="typing-text"></span><span class="cursor">|</span></h3>
-          <p class="home__description">Specializing in data pipelines, analytics, and business insights through real-time and batch processing techniques.</p>
-          <a href="#projects" class="button button--flex">Explore Projects <i class="fas fa-arrow-right button__icon"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="about section" id="about">
-      <h2 class="section__title">About Me</h2>
-      <div class="about__container container grid">
-        <div class="about__data">
-          <p class="about__description">I am a data-driven problem solver with a graduate degree in Business Analytics from WPI, passionate about transforming raw data into actionable insights. With hands-on experience in data engineering pipelines, real-time analytics, and business intelligence, I thrive at the intersection of analysis and automation. Skilled in Python, SQL, Spark, Kafka, and Power BI, I bring strong analytical thinking and a deep understanding of how to use data to drive strategic business decisions.</p>
-        </div>
-      </div>
-    </section>
-<div class="wave"></div>
-
-    <!-- Skills -->
-    <section class="skills section" id="skills">
-      <h2 class="section__title">Skills</h2>
-      <div class="skills__container container grid">
-        <div class="skills__content">
+</header>
+<!-- Backdrop -->
+<div aria-hidden="" class="bg">
+<canvas id="particles"></canvas>
+<div class="gridlines"></div>
+</div>
+<main id="main">
+<!-- HERO -->
+<section class="hero container" id="home">
+<div class="hero__copy">
+<h1 class="hero__title xxl">Analytics that <span class="accent">think</span>,<br/>pipelines that <span class="accent">run themselves</span>.</h1>
+<p class="lede">From <span class="accent">raw data</span> to<br/><span class="accent">real-time decisions</span> — end to end.</p>
+<div class="cta">
+<a class="btn magnet" href="#work">See case studies</a>
+<a class="btn btn--ghost magnet" href="mailto:jeswanthadari1@gmail.com">Email me</a>
+</div>
+<div class="meta">
+<a href="mailto:jeswanthadari1@gmail.com">jeswanthadari1@gmail.com</a> ·
+          <a href="tel:+17745789821">+1 (774) 578‑9821</a> ·
+          <a href="http://www.linkedin.com/in/jeswanth-adari-a417751b3" rel="noopener" target="_blank">LinkedIn</a> ·
           
-    <div class="skill-bar"><span>SQL</span>
-      <div class="skill-track"><div class="skill-fill" style="--width: 90%; width: 90%;"></div></div>
-    </div>
-    <div class="skill-bar"><span>Python</span>
-      <div class="skill-track"><div class="skill-fill" style="--width: 85%; width: 85%;"></div></div>
-    </div>
-    <div class="skill-bar"><span>Apache Spark</span>
-      <div class="skill-track"><div class="skill-fill" style="--width: 80%; width: 80%;"></div></div>
-    </div>
-    <div class="skill-bar"><span>Kafka</span>
-      <div class="skill-track"><div class="skill-fill" style="--width: 75%; width: 75%;"></div></div>
-    </div>
-    <div class="skill-bar"><span>Power BI</span>
-      <div class="skill-track"><div class="skill-fill" style="--width: 85%; width: 85%;"></div></div>
-    </div>
-    <div class="skill-bar"><span>Data Engineering Pipelines</span>
-      <div class="skill-track"><div class="skill-fill" style="--width: 70%; width: 70%;"></div></div>
-    </div>
-    <div class="skill-bar"><span>Google Cloud Platform</span>
-      <div class="skill-track"><div class="skill-fill" style="--width: 80%; width: 80%;"></div></div>
-    </div>
-    
-            
-            
-            
-            
-            
-            
-            
-          </ul>
-        </div>
-      </div>
-    </section>
-
-   <!-- Projects -->
-<section class="portfolio section" id="projects">
-  <h2 class="section__title">Featured Projects</h2>
-  <div class="card-container">
-
-    <div class="portfolio__content">
-      <img src="https://images.pexels.com/photos/8296978/pexels-photo-8296978.jpeg" alt="HR Analytics" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
-      <h3 class="portfolio__title">HR Analytics Dashboard</h3>
-      <p class="portfolio__description">Interactive Tableau dashboard visualizing HR metrics like attrition rate and engagement.</p>
-      <a href="https://public.tableau.com/app/profile/jeswanth.adari/viz/HRAnalytics_Dashboard_17386296446830/HRAnalyticsDashboard" target="_blank" class="btn-outline">View Dashboard</a>
-    </div>
-
-    <div class="portfolio__content">
-      <img src="https://images.pexels.com/photos/1054974/pexels-photo-1054974.jpeg" alt="Airbnb Price Prediction" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
-      <h3 class="portfolio__title">Airbnb Price Prediction</h3>
-      <p class="portfolio__description">ML model to predict NYC Airbnb prices based on location, reviews, and room details.</p>
-      <a href="https://docs.google.com/document/d/1Ahka7Ip4NxQDafQsvbEco4tdJudX4mH4/edit?usp=sharing" target="_blank" class="btn-outline">View Report</a>
-    </div>
-
-    <div class="portfolio__content">
-      <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg" alt="YouTube to Blog Generator" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
-      <h3 class="portfolio__title">YouTube to Blog Generator</h3>
-      <p class="portfolio__description">Python tool to convert YouTube transcripts into SEO-optimized blog posts using AI.</p>
-      <a href="https://github.com/Jesh9999/yt2blog" target="_blank" class="btn-outline">View on GitHub</a>
-    </div>
-
-    <div class="portfolio__content">
-      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Customer Churn Prediction" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
-      <h3 class="portfolio__title">Customer Churn Prediction</h3>
-      <p class="portfolio__description">Classification model predicting telecom customer churn with key business insights.</p>
-      <a href="https://docs.google.com/document/d/1uZhFUN0n_pdXecNSV-F21PH8xR8sg1Ss/edit?usp=sharing" target="_blank" class="btn-outline">View Report</a>
-    </div>
-
-    <div class="portfolio__content">
-      <img src="https://images.pexels.com/photos/7088520/pexels-photo-7088520.jpeg" alt="Surgical Operations Analysis" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
-      <h3 class="portfolio__title">Surgical Operations Analysis</h3>
-      <p class="portfolio__description">Power BI dashboard analyzing surgical room efficiency and hospital performance.</p>
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiN2YwNzk2YTgtOTYxOC00MDRkLWExODEtYzJkMTkyNDE4Mzc0IiwidCI6ImMzNDM2NGQzLThkNmEtNDgzYS04Yzk0LTQ1M2E5ODI3YTI5YSIsImMiOjN9" target="_blank" class="btn-outline">View Dashboard</a>
-    </div>
-
-  </div>
+</div>
+</div>
+<div class="hero__device tilt sheen">
+<div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+<div class="frame">
+<div class="screen">
+<img alt="Real-time EV analytics" src="assets/ev_hero.svg"/>
+</div>
+</div>
+<div class="hero__metrics">
+<div class="metric">
+<div class="num" data-target="5">0</div>
+<div class="label">end‑to‑end <span class="accent">case studies</span></div>
+</div>
+<div class="metric">
+<div class="num" data-target="3000000">0</div>
+<div class="label"><span class="accent">rows</span> processed</div>
+</div>
+<div class="metric">
+<div class="num" data-target="99">0</div>
+<div class="label"><span class="accent">pipeline</span> reliability (%)</div>
+</div>
+</div>
+</div>
 </section>
-
-    <!-- Contact -->
-    <section class="contact section" id="contact">
-      <h2 class="section__title">Contact Me</h2>
-      <div class="contact__container container">
-        <p>Want to collaborate or have a question? Reach out!</p>
-        <p>Email: <a href="mailto:jeswanthadari1@gmail.com">jeswanthadari1@gmail.com</a></p>
-        <p><a href="https://www.linkedin.com/in/jeswanth-adari-a417751b3/" target="_blank">LinkedIn Profile</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer__container container">
-      <p>&copy; 2025 Jeswanth Adari. All rights reserved.</p>
-    </div>
-  </footer>
-
-
-
-<script>
-  const roles = ["Data Analyst", "Data Engineer", "Business Analyst"];
-  let roleIndex = 0;
-  let charIndex = 0;
-  let typingText = document.getElementById("typing-text");
-
-  function type() {
-    if (charIndex <= roles[roleIndex].length) {
-      typingText.textContent = roles[roleIndex].substring(0, charIndex++);
-      setTimeout(type, 120);
-    } else {
-      setTimeout(erase, 1500);
-    }
-  }
-
-  function erase() {
-    if (charIndex >= 0) {
-      typingText.textContent = roles[roleIndex].substring(0, charIndex--);
-      setTimeout(erase, 60);
-    } else {
-      roleIndex = (roleIndex + 1) % roles.length;
-      setTimeout(type, 200);
-    }
-  }
-
-  type();
-</script>
+<!-- PROJECT GRID -->
+<section aria-label="Case studies" class="stories" id="stories">
+<div class="stories__wrap">
+<div class="stories__sticky">
+<div class="stories__visual">
+<img alt="Case study visual" id="story-image" src="assets/crm.svg"/>
+</div>
+</div>
+<div class="stories__slides"><article class="story" data-img="assets/crm.svg"><h2 class="experience-headline">Data Ops &amp; CRM  — HubSpot dashboards &amp; automations → boosted SDR productivity <span class="accent">+20%</span></h2><p>HubSpot CRM analytics and automation; created SOP‑aligned dashboards and workflows to improve pipeline visibility and SDR productivity.</p><ul class="experience-details bullets"><li>Built SOP-aligned dashboards &amp; lead scoring automations</li><li>Cut SDR → AE handoff errors by <span class="accent">30%</span></li><li>Delivered stage-by-stage pipeline visibility for leadership</li></ul></article><article class="story" data-img="assets/ev.svg"><h2 class="experience-headline">Analytics Intern — Re‑Volt Charging</h2><p>Real‑time site selection analytics for EV chargers; merged traffic, demographics and competitor pricing to prioritize locations.</p><ul class="experience-details bullets"><li>Kafka → PostgreSQL → Power BI pipeline for near real‑time metrics</li><li>Location scoring model; improved site planning efficiency by <span class="accent">30%</span></li><li>Competitive pricing tracking across MA cities</li></ul></article><article class="story" data-img="assets/telco.svg"><h2 class="experience-headline">Data Analyst  — ETL + dashboards → reduced churn <span class="accent">−8%</span> across 1M+ users</h2><p>Built ETL pipelines and product-style dashboards for a telecom client; tracked churn/ARPU and improved retention targeting.</p><ul class="experience-details bullets"><li>Designed SQL pipelines &amp; automated daily refresh (<span class="accent">99%</span> SLA)</li><li>Built churn &amp; ARPU dashboards for 1M+ subscribers</li><li>Cut billing reconciliation time from hours → minutes</li></ul></article></div>
+</div>
+</section><section class="work container" id="work">
+<h2 class="section__title">Featured Projects</h2>
+<div class="card-container">
+<div class="portfolio__content">
+<img alt="HR Analytics" src="https://images.pexels.com/photos/8296978/pexels-photo-8296978.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">Attrition dashboard → reduced pilot attrition −<span class="accent">12%</span></h3>
+<p class="portfolio__description">Interactive Tableau dashboard visualizing HR metrics like attrition rate and engagement.</p>
+<a class="btn-outline" href="https://public.tableau.com/app/profile/jeswanth.adari/viz/HRAnalytics_Dashboard_17386296446830/HRAnalyticsDashboard" target="_blank">View Dashboard</a>
+</div>
+<div class="portfolio__content">
+<img alt="Airbnb Price Prediction" src="https://images.pexels.com/photos/1054974/pexels-photo-1054974.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">Regression model (<span class="accent">R² = 0.82</span>) → <span class="accent">+18%</span> pricing accuracy</h3>
+<p class="portfolio__description">ML model to predict NYC Airbnb prices based on location, reviews, and room details.</p>
+<a class="btn-outline" href="https://docs.google.com/document/d/1Ahka7Ip4NxQDafQsvbEco4tdJudX4mH4/edit?usp=sharing" target="_blank">View Report</a>
+</div>
+<div class="portfolio__content">
+<img alt="YouTube to Blog Generator" src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">YouTube to Blog Generator</h3>
+<p class="portfolio__description">Python tool to convert YouTube transcripts into SEO-optimized blog posts using AI.</p>
+<a class="btn-outline" href="https://github.com/Jesh9999/yt2blog" target="_blank">View on GitHub</a>
+</div>
+<div class="portfolio__content">
+<img alt="Customer Churn Prediction" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">Customer Churn Prediction</h3>
+<p class="portfolio__description">Classification model predicting telecom customer churn with key business insights.</p>
+<a class="btn-outline" href="https://docs.google.com/document/d/1uZhFUN0n_pdXecNSV-F21PH8xR8sg1Ss/edit?usp=sharing" target="_blank">View Report</a>
+</div>
+<div class="portfolio__content">
+<img alt="Surgical Operations Analysis" src="https://images.pexels.com/photos/7088520/pexels-photo-7088520.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">OR utilization insights → idle time cut −<span class="accent">15%</span></h3>
+<p class="portfolio__description">Power BI dashboard analyzing surgical room efficiency and hospital performance.</p>
+<a class="btn-outline" href="https://app.powerbi.com/view?r=eyJrIjoiN2YwNzk2YTgtOTYxOC00MDRkLWExODEtYzJkMTkyNDE4Mzc0IiwidCI6ImMzNDM2NGQzLThkNmEtNDgzYS04Yzk0LTQ1M2E5ODI3YTI5YSIsImMiOjN9" target="_blank">View Dashboard</a>
+</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="about container" id="about"><div class="about__card"><h2>About Me</h2><p>Data analyst/engineer who builds reliable data pipelines and decision-ready dashboards. I turn messy data into clear stories using SQL, Python, Spark/Kafka, and Power BI/Tableau.</p><ul class="kv"><li><span>Focus</span>Data Engineering &amp; Analytics</li><li><span>Core</span>SQL · Python · Spark · Kafka · Power BI · Tableau</li><li><span>Interests</span>Real‑time pipelines, ML‑powered BI</li></ul></div></section>
+<!-- CONTACT -->
+<section class="skills container" id="skills"><h2>Skills</h2><div class="skills-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Apache Spark</span><span class="tag">Kafka</span><span class="tag">Power BI</span><span class="tag">Data Engineering Pipelines</span><span class="tag">Google Cloud Platform</span></div></section><section class="contact container" id="contact"><div class="contact__card"><h2>Contact Me</h2><p>Open to Data Analyst / Data Engineer roles (Boston, Atlanta, TX or US‑remote). Best ways to reach me:</p><div class="btn-row"><a class="btn" href="mailto:jeswanthadari1@gmail.com">Email Me</a><a class="btn btn--ghost" href="https://www.linkedin.com/in/jeswanthadari1" target="_blank">LinkedIn</a></div></div></section>
+</main>
+<footer class="ftr"><div class="container small">© Jeswanth Adari</div></footer>
 </body>
-
-
-
-
 </html>
