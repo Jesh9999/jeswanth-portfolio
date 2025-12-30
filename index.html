@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>© Jeswanth Adari</title>
+<meta content="Zoox-inspired portfolio with section pinning, cinematic scroll, and premium microinteractions." name="description"/>
+<meta content="#0b0b0b" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<!-- GSAP + ScrollTrigger + Lenis (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.36/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script defer="" src="script.js"></script>
+</head>
+<body><div class="progressbar"></div>
+<!-- Progress Bar -->
+<div aria-hidden="" class="progress"><div class="progress__bar" id="progress"></div></div>
+<!-- Cursor Glow -->
+<div aria-hidden="" class="cursor" id="cursor"></div>
+<header class="hdr" role="banner">
+<nav aria-label="Main" class="nav container">
+<a aria-label="Home" class="brand" href="#home">JA</a>
+<button aria-controls="navmenu" aria-expanded="false" aria-label="Menu" class="menu">
+<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+<ul class="navmenu" id="navmenu">
+<li><a href="#stories">Stories</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a class="btn btn--ghost" href="resume.pdf" rel="noopener" target="_blank">Resume</a></li>
+</ul>
+</nav>
+</header>
+<!-- Backdrop -->
+<div aria-hidden="" class="bg">
+<canvas id="particles"></canvas>
+<div class="gridlines"></div>
+</div>
+<main id="main">
+<!-- HERO -->
+<section class="hero container" id="home">
+<div class="hero__copy">
+
+<h1 class="hero-title xxl">
+  Data Analyst turning <span class="accent">data</span> into decisions<br />
+  that move teams forward.
+</h1>
+
+
+<p class="lede">
+  Business and GTM analytics. KPI design, dashboards, and automation that leaders actually use.
+</p>
+
+<div class="cta">
+<a class="btn magnet" href="#work">See case studies</a>
+<a class="btn btn--ghost magnet" href="mailto:jeswanthadari1@gmail.com">Email me</a>
+</div>
+<div class="meta">
+<a href="mailto:jeswanthadari1@gmail.com">jeswanthadari1@gmail.com</a> ·
+          <a href="tel:+17745789821">+1 (774) 578‑9821</a> ·
+          <a href="http://www.linkedin.com/in/jeswanth-adari-a417751b3" rel="noopener" target="_blank">LinkedIn</a> ·
+          
+</div>
+</div>
+<div class="hero__device tilt sheen">
+<div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+<div class="frame">
+<div class="screen">
+<img alt="Real-time EV analytics" src="assets/ev_hero.svg"/>
+</div>
+</div>
+<div class="hero__metrics">
+<div class="metric">
+<div class="num" data-target="3">0</div>
+<div class="label"><span class="accent">internships</span> shipped end‑to‑end</div>
+</div>
+<div class="metric">
+<div class="num" data-target="5">0</div>
+<div class="label"><span class="accent">projects</span> with publishable outcomes</div>
+</div>
+<div class="metric">
+<div class="num" data-target="20">0</div>
+<div class="label"><span class="accent">productivity</span> lift delivered (%)</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROJECT GRID -->
+<section aria-label="Case studies" class="stories" id="stories">
+<div class="stories__wrap">
+<div class="stories__sticky">
+<div class="stories__visual">
+<img alt="Case study visual" id="story-image" src="assets/crm.svg"/>
+</div>
+</div>
+<div class="stories__slides">
+      <article class="story is-active" data-img="assets/flow.svg">
+        <div class="story__meta">
+            <span class="meta-pill meta-pill--company">Flow</span>
+            <span class="meta-divider">|</span>
+            <span class="meta-pill">SQL, KPI dashboards, CRM data quality</span>
+            <span class="meta-divider">|</span>
+            <span class="meta-pill">Sep 2025 - Dec 2025</span>
+          </div>
+        <h3 class="story__title">Pipeline analytics + data quality that leaders actually trust</h3>
+        <p class="story__desc">
+          Owned weekly KPI reporting for pipeline and coverage, plus CRM/data quality improvements so the team could
+          make decisions without second-guessing the numbers.
+        </p>
+        <ul class="story__bullets">
+          <li>Built leadership-ready dashboards for pipeline health (coverage, conversion, velocity) and kept definitions consistent.</li>
+          <li>Improved lead + geo data quality via de-duplication, enrichment, and validation rules (fewer bad routes, fewer manual fixes).</li>
+          <li>Partnered with GTM to translate messy questions into crisp metrics and a single source of truth.</li>
+        </ul>
+      </article>
+
+      <article class="story" data-img="assets/crm.svg">
+        <div class="story__meta">
+            <span class="meta-pill meta-pill--company">Voda.ai</span>
+            <span class="meta-divider">|</span>
+            <span class="meta-pill">HubSpot, GTM analytics, segmentation, reporting</span>
+            <span class="meta-divider">|</span>
+            <span class="meta-pill">Jun 2025 - Aug 2025</span>
+          </div>
+        <h3 class="story__title">Data Ops + HubSpot automation that lifted SDR output</h3>
+        <p class="story__desc">
+          Built SOP-aligned HubSpot dashboards and automation to improve pipeline visibility, scoring consistency,
+          and handoff hygiene across the SDR - AE workflow.
+        </p>
+        <ul class="story__bullets">
+          <li>Owned reporting for conversion, stage time, and activity KPIs across Direct + Indirect motions.</li>
+          <li>Automated lead scoring + hygiene checks; reduced SDR - AE handoff errors by <span class="accent">30%</span>.</li>
+          <li>Shipped exec dashboards adopted in weekly leadership reviews; contributed to <span class="accent">+20%</span> SDR productivity.</li>
+        </ul>
+      </article>
+
+      <article class="story" data-img="assets/ev.svg">
+        <div class="story__meta">
+            <span class="meta-pill meta-pill--company">Re-Volt Charging</span>
+            <span class="meta-divider">|</span>
+            <span class="meta-pill">Python, geospatial + ROI modeling, Power BI</span>
+            <span class="meta-divider">|</span>
+            <span class="meta-pill">Jan 2025 - May 2025</span>
+          </div>
+        <h3 class="story__title">EV site selection analytics for faster location decisions</h3>
+        <p class="story__desc">
+          Turned traffic, demographics, and competitor coverage into a location scoring model and decision-ready reporting
+          for EV charger expansion across Massachusetts.
+        </p>
+        <ul class="story__bullets">
+          <li>Built a location scoring model (traffic, demographics, competitor density) to prioritize deployment.</li>
+          <li>Delivered city-level dashboards for ROI and demand signals; improved site planning efficiency by <span class="accent">+30%</span>.</li>
+          <li>Researched competitor pricing + municipal parking costs to strengthen deal and MOU discussions.</li>
+        </ul>
+      </article>
+
+      <article class="story" data-img="assets/telco.svg">
+        <div class="story__meta">
+            <span class="meta-pill meta-pill--company">Aditi Digital (Telecom)</span>
+            <span class="meta-divider">|</span>
+            <span class="meta-pill">SQL, Python, churn/ARPU analytics, BI dashboards</span>
+            <span class="meta-divider">|</span>
+            <span class="meta-pill">2023 - 2024</span>
+          </div>
+        <h3 class="story__title">Churn + ARPU analytics with automated reporting</h3>
+        <p class="story__desc">
+          Built reporting and cohort views for churn and revenue drivers, improving targeting and reducing manual reporting time.
+        </p>
+        <ul class="story__bullets">
+          <li>Created churn + ARPU KPI layer with daily refresh jobs (high reliability) feeding executive reporting.</li>
+          <li>Built cohort and retention dashboards used for targeting and campaign evaluation; supported churn reduction work.</li>
+          <li>Automated recurring billing and reconciliation workflows; cut reporting turnaround from hours to minutes.</li>
+        </ul>
+      </article>
+      </div>
+</section><section class="work container" id="work">
+<h2 class="section__title">Featured Projects</h2>
+<div class="card-container">
+<div class="portfolio__content">
+<img alt="HR Analytics" src="https://images.pexels.com/photos/8296978/pexels-photo-8296978.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">Attrition dashboard → reduced pilot attrition −<span class="accent">12%</span></h3>
+<p class="portfolio__description">Interactive Tableau dashboard visualizing HR metrics like attrition rate and engagement.</p>
+<a class="btn-outline" href="https://public.tableau.com/app/profile/jeswanth.adari/viz/HRAnalytics_Dashboard_17386296446830/HRAnalyticsDashboard" target="_blank">View Dashboard</a>
+<ul><li>Interactive attrition, performance, and engagement dashboard with drill‑downs.</li><li>Surfaced high‑risk segments to guide HR interventions and prioritization.</li></ul></div>
+<div class="portfolio__content">
+<img alt="Airbnb Price Prediction" src="https://images.pexels.com/photos/1054974/pexels-photo-1054974.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">Regression model (<span class="accent">R² = 0.82</span>) → <span class="accent">+18%</span> pricing accuracy</h3>
+<p class="portfolio__description">ML model to predict NYC Airbnb prices based on location, reviews, and room details.</p>
+<a class="btn-outline" href="https://docs.google.com/document/d/1Ahka7Ip4NxQDafQsvbEco4tdJudX4mH4/edit?usp=sharing" target="_blank">View Report</a>
+<ul><li>Built a regression pipeline with feature engineering and evaluation ( <span class="accent">R² = 0.82</span> ).</li><li>Translated model outputs into pricing levers and monitoring metrics.</li></ul></div>
+<div class="portfolio__content">
+<img alt="YouTube to Blog Generator" src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">YouTube to Blog Generator</h3>
+<p class="portfolio__description">Python tool to convert YouTube transcripts into SEO-optimized blog posts using AI.</p>
+<a class="btn-outline" href="https://github.com/Jesh9999/yt2blog" target="_blank">View on GitHub</a>
+<ul><li>Automated YouTube → blog workflow: transcript ingest, summarization, and structured article output.</li><li>Designed for repeatable publishing with clean formatting and metadata.</li></ul></div>
+<div class="portfolio__content">
+<img alt="Customer Churn Prediction" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">Customer Churn Prediction</h3>
+<p class="portfolio__description">Classification model predicting telecom customer churn with key business insights.</p>
+<a class="btn-outline" href="https://docs.google.com/document/d/1uZhFUN0n_pdXecNSV-F21PH8xR8sg1Ss/edit?usp=sharing" target="_blank">View Report</a>
+</div>
+<div class="portfolio__content">
+<img alt="Surgical Operations Analysis" src="https://images.pexels.com/photos/7088520/pexels-photo-7088520.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;"/>
+<h3 class="portfolio__title">OR utilization insights → idle time cut −<span class="accent">15%</span></h3>
+<p class="portfolio__description">Power BI dashboard analyzing surgical room efficiency and hospital performance.</p>
+<a class="btn-outline" href="https://app.powerbi.com/view?r=eyJrIjoiN2YwNzk2YTgtOTYxOC00MDRkLWExODEtYzJkMTkyNDE4Mzc0IiwidCI6ImMzNDM2NGQzLThkNmEtNDgzYS04Yzk0LTQ1M2E5ODI3YTI5YSIsImMiOjN9" target="_blank">View Dashboard</a>
+</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="about container" id="about"><div class="about__card"><h2>About Me</h2><p>Data analyst focused on GTM/CRM and operations analytics. I turn messy business questions into clean KPI definitions, dashboards leaders actually use, and data quality improvements that keep reporting trustworthy.</p><ul class="kv"><li><span>Focus</span>Analytics &amp; BI (GTM/CRM, Operations)</li><li><span>Core</span>SQL · Python · Power BI · Tableau · HubSpot</li><li><span>Interests</span>KPI systems, data quality, automation, decision support</li></ul></div></section>
+<!-- CONTACT -->
+<section class="skills container" id="skills"><h2>Skills</h2><div class="skills-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">HubSpot</span><span class="tag">KPI Design</span><span class="tag">Data Quality</span><span class="tag">Stakeholder Reporting</span></div></section><section class="contact container" id="contact"><div class="contact__card"><h2>Contact Me</h2><p>Open to Data Analyst / Data Engineer roles (Boston, Atlanta, TX or US‑remote). Best ways to reach me:</p><div class="btn-row"><a class="btn" href="mailto:jeswanthadari1@gmail.com">Email Me</a><a class="btn btn--ghost" href="https://www.linkedin.com/in/jeswanthadari1" target="_blank">LinkedIn</a></div></div></section>
+</main>
+<footer class="ftr"><div class="container small">© Jeswanth Adari</div></footer>
+</body>
+</html>
