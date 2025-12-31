@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+  <defs>
+    <linearGradient id="gFlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00e08a"/>
+      <stop offset="100%" stop-color="#34ffd1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="#0f1419"/>
+  <rect x="40" y="40" width="1120" height="620" rx="24" fill="url(#gFlow)" opacity="0.10" stroke="#ffffff22"/>
+  <g stroke="#22ffaa55" fill="none" stroke-width="2">
+    <path d="M180 420 C 320 300, 420 520, 560 380 S 820 260, 1020 360" />
+    <circle cx="180" cy="420" r="10" fill="#22ffaa55"/>
+    <circle cx="560" cy="380" r="10" fill="#22ffaa55"/>
+    <circle cx="1020" cy="360" r="10" fill="#22ffaa55"/>
+    <rect x="170" y="210" width="250" height="120" rx="16"/>
+    <rect x="475" y="180" width="250" height="150" rx="16"/>
+    <rect x="780" y="210" width="250" height="120" rx="16"/>
+  </g>
+  <g fill="#e8f0f2" font-family="Inter, sans-serif" font-size="42">
+    <text x="60" y="120">Pipeline &amp; Data Quality</text>
+    <text x="60" y="170" font-size="22" fill="#9aa3aa">KPI design · dashboards · validation rules</text>
+  </g>
+</svg>
