@@ -400,7 +400,7 @@ nav a:hover::after{ width:70%; }
   transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
 }
 #stories .story:hover{
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.02);
   border-color: rgba(0,255,183,.22);
   box-shadow: 0 20px 70px rgba(0,0,0,.34), 0 0 0 1px rgba(0,255,183,.16) inset;
   background:linear-gradient(180deg, rgba(0,255,183,.06), rgba(255,255,255,.02));
@@ -536,3 +536,132 @@ body::after{
     line-height: 1.02;
   }
 }
+
+/* =============================
+   Case studies (horizontal)
+   ============================= */
+
+.case-studies {
+  max-width: 1120px;
+  margin: 72px auto 0;
+  padding: 0 20px;
+}
+
+.case-studies .section-title {
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+
+.case-studies .section-subtitle {
+  opacity: 0.78;
+  margin: 0 0 18px;
+  line-height: 1.5;
+}
+
+.case-strip {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px 4px 14px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 18px;
+}
+
+
+.case-strip {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+/* Hide scrollbar without breaking scrolling */
+.case-strip::-webkit-scrollbar { height: 10px; }
+.case-strip::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+.case-strip::-webkit-scrollbar-track { background: transparent; }
+
+.case-card {
+  flex: 0 0 auto;
+  width: min(420px, 88vw);
+  scroll-snap-align: start;
+  border-radius: 22px;
+  padding: 18px 18px 16px;
+  background: rgba(20, 28, 27, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  position: relative;
+  transform: translateZ(0);
+  transition: transform 240ms cubic-bezier(.2,.8,.2,1), border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.case-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: radial-gradient(800px 220px at 18% 0%, rgba(89, 255, 196, 0.16), transparent 60%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.case-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(89, 255, 196, 0.22);
+  box-shadow: 0 16px 44px rgba(0,0,0,0.45);
+}
+
+.case-tag {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0.95;
+}
+
+.case-tag .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(89, 255, 196, 0.9);
+  box-shadow: 0 0 14px rgba(89, 255, 196, 0.35);
+}
+
+.case-title {
+  font-size: 20px;
+  line-height: 1.15;
+  margin: 12px 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.case-meta {
+  opacity: 0.82;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+
+.case-bullets {
+  margin: 0;
+  padding-left: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.case-bullets b { color: rgba(255, 255, 255, 0.92); }
+
+.case-hint {
+  opacity: 0.65;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Better pointer affordance for dragging */
+.case-strip.is-dragging { cursor: grabbing; }
+.case-strip { cursor: grab; }

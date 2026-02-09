@@ -265,3 +265,62 @@
     });
   });
 })();
+
+
+
+// Horizontal case study strip: map mouse wheel to sideways scroll (desktop)
+(function(){
+  const strip = document.querySelector('.case-strip');
+  if(!strip) return;
+
+  strip.addEventListener('wheel', (e) => {
+    // Trackpads already scroll horizontally; for mouse wheels we convert vertical to horizontal
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && !e.shiftKey) {
+      strip.scrollLeft += e.deltaY;
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  // Drag to scroll (mouse + touch) so it feels like a carousel
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  const onDown = (pageX) => {
+    isDown = true;
+    strip.classList.add('is-dragging');
+    startX = pageX;
+    scrollLeft = strip.scrollLeft;
+  };
+
+  const onMove = (pageX) => {
+    if (!isDown) return;
+    const dx = pageX - startX;
+    strip.scrollLeft = scrollLeft - dx;
+  };
+
+  const onUp = () => {
+    isDown = false;
+    strip.classList.remove('is-dragging');
+  };
+
+  // Mouse
+  strip.addEventListener('mousedown', (e) => onDown(e.pageX));
+  window.addEventListener('mousemove', (e) => onMove(e.pageX));
+  window.addEventListener('mouseup', onUp);
+
+  // Touch
+  strip.addEventListener('touchstart', (e) => {
+    const t = e.touches && e.touches[0];
+    if (!t) return;
+    onDown(t.pageX);
+  }, { passive: true });
+
+  strip.addEventListener('touchmove', (e) => {
+    const t = e.touches && e.touches[0];
+    if (!t) return;
+    onMove(t.pageX);
+  }, { passive: true });
+
+  strip.addEventListener('touchend', onUp);
+})();
