@@ -17,7 +17,10 @@
     <rect x="780" y="210" width="250" height="120" rx="16"/>
   </g>
   <g fill="#e8f0f2" font-family="Inter, sans-serif" font-size="42">
-    <text x="60" y="120">Pipeline &amp; Data Quality</text>
-    <text x="60" y="170" font-size="22" fill="#9aa3aa">KPI design · dashboards · validation rules</text>
+    <text x="60" y="120">Pipeline and Data Quality</text>
+    <text x="60" y="170" font-size="22" fill="#9aa3aa">SQL, Python, Power BI, Snowflake, dbt, Airflow, OpenAI</text>
+<text x="60" y="198" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#9aa3aa">Ops analytics, KPI systems, data quality controls</text>
+  <text x="60" y="238" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#e8f0f2">Data Analyst, Operations Analytics</text>
+
   </g>
 </svg>

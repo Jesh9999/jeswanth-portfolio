@@ -18,6 +18,9 @@
   </g>
   <g fill="#e8f0f2" font-family="Inter, sans-serif" font-size="42">
     <text x="60" y="120">EV Charging Analytics</text>
-    <text x="60" y="170" font-size="22" fill="#9aa3aa">Site scoring · geo + demographics · ROI</text>
+    <text x="60" y="170" font-size="22" fill="#9aa3aa">Python, SQL, GeoPandas, PostGIS, Power BI, ArcGIS</text>
+<text x="60" y="198" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#9aa3aa">Site selection, ROI modeling, demand signals</text>
+    <text x="60" y="238" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#e8f0f2">Data Scientist, EV Site Analytics</text>
+
   </g>
 </svg>
